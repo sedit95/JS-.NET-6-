@@ -1,0 +1,76 @@
+﻿@using JSExamplies.Models
+@using JSExamplies.Models.SignupModel
+@using JSExamplies.Models.LoginModel
+@model LoginSignupRequestModel
+
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+}
+ 
+
+<section class="container forms">
+    <div class="form login">
+        <div class="form-content">
+            <header>Giriş Penceresi</header>
+            <form id="loginForm" asp-action="Login" asp-controller="Home" method="post">
+                <div class="field input-field">
+                    <input type="email" placeholder="Email" asp-for="Login.mail" class="input" required>
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" placeholder="Şifre" asp-for="Login.password" class="password" required>
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+
+                <div class="form-link">
+                    <a href="#" class="forgot-pass">Şifremi unuttum!</a>
+                </div>
+
+                <div class="field button-field">
+                    <button type="submit">Giriş</button>
+                </div>
+            </form>
+
+            <div class="form-link">
+                <span>Mevcut bir hesabın yok mu ? <a href="#" class="link signup-link">Kayıt Ol!</a></span>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Signup Form -->
+
+    <div class="form signup">
+        <div class="form-content">
+            <header>Kayıt Ol</header>
+            <form asp-action="SignUp" asp-controller="Home" method="post">
+                <div class="field input-field">
+                    <input type="email" placeholder="Mail" class="input" asp-for="Signup.mail" required>
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" maxlength="6" placeholder="Şifre" class="password" asp-for="Signup.password" required>
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+
+                <div class="field input-field">
+                    <input type="password" maxlength="6" placeholder="Şifreyi tekrarla" class="password" asp-for="Signup.againPassword" required>
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+
+                <div class="field button-field">
+                    <button type="submit">Kaydet</button>
+                </div>
+            </form>
+
+            <div class="form-link">
+                <span>Hesabın var mı ? <a href="#" class="link login-link">Giriş Yap</a></span>
+            </div>
+        </div>
+
+
+    </div>
+</section>
