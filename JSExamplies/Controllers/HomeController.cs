@@ -45,6 +45,8 @@ namespace JSExamplies.Controllers
             string password = model.Signup.password;
             string againPass = model.Signup.againPassword;
 
+
+
             return RedirectToAction("Index");
         }
 
